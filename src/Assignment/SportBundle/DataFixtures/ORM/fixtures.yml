@@ -1,0 +1,13 @@
+Assignment\SportBundle\Entity\User:
+    user{john, mario}:
+        username: <current()>
+        password: pass<current()>
+
+Assignment\SportBundle\Entity\Exercise:
+    exercise{1..300}:
+        user: @user*
+        description: <randomElement(['Biceps Curl', 'Chest Press', 'Front Lunge', 'Pullover'])>
+        weight: <numberBetween(20, 200)>
+        count: <numberBetween(5, 15)>
+        date: <dateTimeBetween('-30 day', 'now')>
+        time: <dateTimeBetween('-30 day', 'now')>

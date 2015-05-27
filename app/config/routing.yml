@@ -1,0 +1,11 @@
+assignment_sport:
+    resource: "@AssignmentSportBundle/Controller/"
+    type:     annotation
+    prefix:     /{_locale}
+    defaults: { _locale : en }
+    requirements:
+        _locale: en|ru
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
