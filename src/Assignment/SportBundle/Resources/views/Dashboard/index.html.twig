@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <h1>{{ 'Dashboard'|trans }}</h1>
+    <p>
+        <a href="{{ path('logout') }}">{{ 'Logout'|trans }}</a>
+    </p>
+
+    <h1>{{ 'Hello %username%'|trans({'%username%': app.user.username}) }}</h1>
+
+    <p>
+        {{ 'Check your activity in last 3 trainings'|trans }}
+    </p>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>{{ '2 weeks ago'|trans }}</th>
+            <th>{{ 'week ago'|trans }}</th>
+            <th>{{ 'today'|trans }}</th>
+        </tr>
+        </thead>
+        {% for i in 0..maxCount-1 %}
+            <tr>
+                {% if twoWeekAgoEx[i] is defined %}
+                    <td>{{ twoWeekAgoEx[i].description }} {{ twoWeekAgoEx[i].weight }} X {{ twoWeekAgoEx[i].count }}</td>
+                {% else %}
+                    <td></td>
+                {% endif %}
+                {% if weekAgoEx[i] is defined %}
+                    <td>{{ weekAgoEx[i].description }} {{ weekAgoEx[i].weight }} X {{ weekAgoEx[i].count }}</td>
+                {% else %}
+                    <td></td>
+                {% endif %}
+                {% if todayEx[i] is defined %}
+                    <td>{{ todayEx[i].description }} {{ todayEx[i].weight }} X {{ todayEx[i].count }}</td>
+                {% else %}
+                    <td></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

@@ -2,6 +2,10 @@
 
 {% block body %}
 
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
     <form action="{{ path('login_check') }}" method="post">
         <label for="username">{{ 'Username'|trans }}:</label>
         <input type="text" id="username" name="_username" value="{{ last_username }}">
@@ -9,7 +13,7 @@
         <label for="password">{{ 'Password'|trans }}:</label>
         <input type="password" id="password" name="_password">
 
-        <input type="hidden" name="_target_path" value="{{ path('exercises', {'_locale': app.request.locale}) }}">
+        <input type="hidden" name="_target_path" value="{{ path('dashboard', {'_locale': app.request.locale}) }}">
         <input type="hidden" name="_failure_path" value="{{ path('login_route', {'_locale': app.request.locale}) }}">
 
         <button type="submit">{{ 'Login'|trans }}</button>

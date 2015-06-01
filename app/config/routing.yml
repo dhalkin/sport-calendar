@@ -6,6 +6,12 @@ assignment_sport:
     requirements:
         _locale: en|ru
 
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+logout:
+    path:   /logout
+
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: login_route
+        permanent: true

@@ -2,11 +2,18 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{{ 'Welcome'|trans }}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+    <p>
+        {% if app.request.locale == 'en' %}
+            en | <a href="{{ path(app.request.get('_route'), {'_locale': 'ru'}) }}">ru</a>
+        {% else %}
+            <a href="{{ path(app.request.get('_route'), {'_locale': 'en'}) }}">en</a> | ru
+        {% endif %}
+    </p>
         {% block body %}
         {% endblock %}
         {% block javascripts %}{% endblock %}

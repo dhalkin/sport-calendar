@@ -1,0 +1,4 @@
+services:
+  sport.exercise:
+    class:        Assignment\SportBundle\Services\Exercise
+    arguments:    ["@=service('doctrine').getManager().getRepository('AssignmentSportBundle:Exercise')"]
