@@ -26,6 +26,6 @@ class Exercise
      */
     public function getList(User $user)
     {
-        return $this->exerciseRepository->findBy(['user' => $user]);
+        return $this->exerciseRepository->findBy(array('user' => $user));
     }
 }

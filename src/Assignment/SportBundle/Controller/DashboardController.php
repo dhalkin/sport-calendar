@@ -22,20 +22,22 @@ class DashboardController extends Controller
         $weekAgo = date('Y-m-d', strtotime("-7 days"));
         $twoWeekAgo = date('Y-m-d', strtotime("-14 days"));
 
-        foreach ($list as $exersice) {
+        foreach ($list as $exercise) {
 
-            if ($exersice->getDate()->format('Y-m-d') == $today) {
-                $todayEx[] = $exersice;
-            } elseif ($exersice->getDate()->format('Y-m-d') == $weekAgo) {
-                $weekAgoEx[] = $exersice;
-            } elseif ($exersice->getDate()->format('Y-m-d') == $twoWeekAgo) {
-                $twoWeekAgoEx[] = $exersice;
+            if ($exercise->getDate()->format('Y-m-d') == $today) {
+                $todayEx[] = $exercise;
+            } elseif ($exercise->getDate()->format('Y-m-d') == $weekAgo) {
+                $weekAgoEx[] = $exercise;
+            } elseif ($exercise->getDate()->format('Y-m-d') == $twoWeekAgo) {
+                $twoWeekAgoEx[] = $exercise;
             }
 
         }
 
         $maxCount = max(count($todayEx), count($weekAgoEx), count($twoWeekAgoEx));
-        return array('todayEx' => $todayEx,
+
+        return array(
+            'todayEx' => $todayEx,
             'weekAgoEx' => $weekAgoEx,
             'twoWeekAgoEx' => $twoWeekAgoEx,
             'maxCount' => $maxCount

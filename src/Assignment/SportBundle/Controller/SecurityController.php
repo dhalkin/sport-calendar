@@ -26,6 +26,5 @@ class SecurityController extends Controller
      */
     public function loginCheckAction()
     {
-        sleep(1);
     }
 }

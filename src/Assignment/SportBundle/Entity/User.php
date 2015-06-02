@@ -56,8 +56,9 @@ class User implements UserInterface, \Serializable
     /**
      * Set username
      *
-     * @param string $username
+     * @param $name
      * @return User
+     * @internal param string $username
      */
     public function setUsername($name)
     {
