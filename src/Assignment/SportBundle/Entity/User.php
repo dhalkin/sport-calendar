@@ -56,8 +56,8 @@ class User implements UserInterface, \Serializable
     /**
      * Set username
      *
-     * @param $name
-     * @return User
+     * @param    $name
+     * @return   User
      * @internal param string $username
      */
     public function setUsername($name)
@@ -70,7 +70,7 @@ class User implements UserInterface, \Serializable
     /**
      * Set password
      *
-     * @param string $password
+     * @param  string $password
      * @return User
      */
     public function setPassword($password)
@@ -98,11 +98,13 @@ class User implements UserInterface, \Serializable
      */
     public function serialize()
     {
-        return serialize([
+        return serialize(
+            [
             $this->id,
             $this->username,
             $this->password,
-        ]);
+            ]
+        );
     }
 
     /**

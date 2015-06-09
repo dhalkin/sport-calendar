@@ -75,7 +75,7 @@ class Exercise
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string $description
      * @return Exercise
      */
     public function setDescription($description)
@@ -98,7 +98,7 @@ class Exercise
     /**
      * Set weight
      *
-     * @param integer $weight
+     * @param  integer $weight
      * @return Exercise
      */
     public function setWeight($weight)
@@ -121,7 +121,7 @@ class Exercise
     /**
      * Set count
      *
-     * @param integer $count
+     * @param  integer $count
      * @return Exercise
      */
     public function setCount($count)
@@ -144,7 +144,7 @@ class Exercise
     /**
      * Set date
      *
-     * @param \DateTime $date
+     * @param  \DateTime $date
      * @return Exercise
      */
     public function setDate($date)
@@ -167,7 +167,7 @@ class Exercise
     /**
      * Set time
      *
-     * @param \DateTime $time
+     * @param  \DateTime $time
      * @return Exercise
      */
     public function setTime($time)

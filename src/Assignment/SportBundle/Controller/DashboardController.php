@@ -3,9 +3,6 @@
 namespace Assignment\SportBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-
 
 class DashboardController extends Controller
 {
@@ -23,7 +20,6 @@ class DashboardController extends Controller
         $twoWeekAgo = date('Y-m-d', strtotime("-14 days"));
 
         foreach ($list as $exercise) {
-
             if ($exercise->getDate()->format('Y-m-d') == $today) {
                 $todayEx[] = $exercise;
             } elseif ($exercise->getDate()->format('Y-m-d') == $weekAgo) {
@@ -31,7 +27,6 @@ class DashboardController extends Controller
             } elseif ($exercise->getDate()->format('Y-m-d') == $twoWeekAgo) {
                 $twoWeekAgoEx[] = $exercise;
             }
-
         }
 
         $maxCount = max(count($todayEx), count($weekAgoEx), count($twoWeekAgoEx));

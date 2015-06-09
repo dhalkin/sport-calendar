@@ -18,6 +18,7 @@ class ExerciseTest extends WebTestCase
 {
     /**
      * @dataProvider getListProvider
+     * @var array data
      */
     public function testGetList($data)
     {
@@ -26,6 +27,9 @@ class ExerciseTest extends WebTestCase
     }
 
 
+    /**
+     * @return array
+     */
     public function getListProvider()
     {
         return array(
