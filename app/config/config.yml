@@ -72,3 +72,4 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+# todo: add alice bundle config and random seed init value

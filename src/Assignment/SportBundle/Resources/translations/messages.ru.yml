@@ -1,3 +1,5 @@
+# use message kyes but not strings for translations
+# e.g. sport.welcome: Hello %username% (http://symfony.com/doc/current/best_practices/i18n.html#translation-keys)
 Hello %username%: Привет %username%
 Logout: Выход
 Username: Имя пользователя
