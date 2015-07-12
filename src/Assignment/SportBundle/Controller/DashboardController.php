@@ -19,6 +19,8 @@ class DashboardController extends Controller
         $weekAgo = date('Y-m-d', strtotime("-7 days"));
         $twoWeekAgo = date('Y-m-d', strtotime("-14 days"));
 
+        // todo: it's much better to filter data in DB level but not in PHP.
+        // you can use entity repository to create custom querys with needed filtering
         foreach ($list as $exercise) {
             if ($exercise->getDate()->format('Y-m-d') == $today) {
                 $todayEx[] = $exercise;
@@ -31,6 +33,7 @@ class DashboardController extends Controller
 
         $maxCount = max(count($todayEx), count($weekAgoEx), count($twoWeekAgoEx));
 
+        // todo: use constants for key names (here and in view file) or create simple object with getters/setters
         return array(
             'todayEx' => $todayEx,
             'weekAgoEx' => $weekAgoEx,

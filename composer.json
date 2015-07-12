@@ -9,6 +9,7 @@
         }
     },
     "require": {
+        // todo: add requred php extensions
         "php": ">=5.3.3",
         "symfony/symfony": "2.6.*",
         "doctrine/orm": "~2.2,>=2.2.3,<2.5",
